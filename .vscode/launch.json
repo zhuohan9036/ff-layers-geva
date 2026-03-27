@@ -1,0 +1,32 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug generate_outputs.py",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/analysis/generate_outputs.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "CUDA_VISIBLE_DEVICES": "3"
+      },
+      "args": [
+        "--data_file",
+        "examples/language_model/wikitext-103/wiki.train.tokens",
+        "--model_dir",
+        "checkpoints/adaptive_lm_wiki103.v2/",
+        "--get_trigger_examples",
+        "--max_sentences",
+        "100",
+        "--top_k_trigger_examples",
+        "50",
+        "--extract_mode",
+        "layer-raw",
+        "--output_file",
+        "top50_train_100sents.jsonl"
+      ],
+      "justMyCode": false
+    }
+  ]
+}
